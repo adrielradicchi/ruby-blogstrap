@@ -1,0 +1,38 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - "db/**/*"
+    - "script/**/*"
+    - "bin/**/*"
+    - "app/views/**/*"
+    - "spec/requests/**/*"
+    - "config/**/*"
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+Metrics/LineLength:
+  Max: 150
+
+Metrics/BlockLength:
+  Exclude:
+    - config/**/*
+    - spec/**/*
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - spec/models/**/*

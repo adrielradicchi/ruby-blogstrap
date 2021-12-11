@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        VARIANT: "3.0"
+        NODE_VERSION: "16"
+    command: sleep infinity
+    ports:
+      - 3000:3000
+    environment:
+      - RAILS_ENV=development
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+    networks:
+      - rails-network
+    volumes:
+      - ..:/blogstrap:cached
+      - ..:/home/ruby/app
+
+  rails_postgres:
+    image: postgres
+    container_name: rails_postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ruby_app_dev
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    networks:
+      - rails-network
+    volumes:
+      - ./.docker/pgdata:/var/lib/postgresql
+
+networks:
+  rails-network:
+    driver: bridge
