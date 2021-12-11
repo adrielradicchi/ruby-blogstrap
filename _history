@@ -1,0 +1,7 @@
+article = new Article.new(title: 'First Post', body: 'Teste body')
+article = Article.new(title: 'First Post', body: 'Teste body')
+article
+article.save
+article
+Article.find(article.id)
+exit
