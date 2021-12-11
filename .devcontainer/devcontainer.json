@@ -4,10 +4,21 @@
 {
 	"name": "Ruby on Rails & Postgres",
 	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
-	"workspaceFolder": "/app",
+	"service": "rails_app",
+	"workspaceFolder": "/home/ruby/app",
+
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "ruby.useLanguageServer": true,
+		"ruby.lint": {
+			"rubocop": {
+				"lint": true,
+				"rails": true
+			}
+		},
+		"ruby.format": "rubocop",
+		"editor.tabSize": 2,
 		"sqltools.connections": [
 			{
 				"name": "Rails Development Database",
@@ -33,7 +44,16 @@
 	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"rebornix.Ruby",
+		"rebornix.ruby",
+		"castwide.solargraph",
+		"misogi.ruby-rubocop",
+		"editorconfig.editorconfig",
+		"donjayamanne.githistory",
+		"eamodio.gitlens",
+    "streetsidesoftware.code-spell-checker",
+    "streetsidesoftware.code-spell-checker-portuguese",
+    "oderwat.indent-rainbow",
+    "rangav.vscode-thunder-client",
 		"mtxr.sqltools",
 		"mtxr.sqltools-driver-pg"
 	],
