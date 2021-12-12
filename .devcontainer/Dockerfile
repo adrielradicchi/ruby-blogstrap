@@ -3,7 +3,7 @@ ARG VARIANT=2-bullseye
 FROM mcr.microsoft.com/vscode/devcontainers/ruby:0-${VARIANT}
 
 # Install Rails
-RUN gem install pg reek rubocop solargraph rails webdrivers
+RUN gem install rufo pg reek rubocop solargraph rails webdrivers
 
 # Default value to allow debug server to serve content over GitHub Codespace's port forwarding service
 # The value is a comma-separated list of allowed domains

@@ -2,65 +2,75 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.209.4/containers/ruby-rails-postgres
 // Update the VARIANT arg in docker-compose.yml to pick a Ruby version
 {
-	"name": "Ruby on Rails & Postgres",
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "rails_app",
-	"workspaceFolder": "/home/ruby/app",
-
-	// Set *default* container specific settings.json values on container create.
-	"settings": {
+  "name": "Ruby on Rails & Postgres",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "rails_app",
+  "workspaceFolder": "/home/ruby/app",
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
     "terminal.integrated.shell.linux": "/bin/zsh",
     "ruby.useLanguageServer": true,
-		"ruby.lint": {
-			"rubocop": {
-				"lint": true,
-				"rails": true
-			}
-		},
-		"ruby.format": "rubocop",
-		"editor.tabSize": 2,
-		"sqltools.connections": [
-			{
-				"name": "Rails Development Database",
-				"driver": "PostgreSQL",
-				"previewLimit": 50,
-				"server": "localhost",
-				"port": 5432,
-				// update this to match config/database.yml
-				"database": "app_development",
-				"username": "vscode"
-			},
-			{
-				"name": "Rails Test Database",
-				"driver": "PostgreSQL",
-				"previewLimit": 50,
-				"server": "localhost",
-				"port": 5432,
-				// update this to match config/database.yml
-				"database": "app_test",
-				"username": "vscode"
-			}
-		]
-	},
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"rebornix.ruby",
-		"castwide.solargraph",
-		"misogi.ruby-rubocop",
-		"editorconfig.editorconfig",
-		"donjayamanne.githistory",
-		"eamodio.gitlens",
+    "ruby.lint": {
+      "rubocop": {
+        "lint": true,
+        "rails": true
+      }
+    },
+    "ruby.format": "rubocop",
+    "editor.tabSize": 2,
+    "sqltools.connections": [
+      {
+        "name": "Rails Development Database",
+        "driver": "PostgreSQL",
+        "previewLimit": 50,
+        "server": "localhost",
+        "port": 5432,
+        // update this to match config/database.yml
+        "database": "app_development",
+        "username": "vscode"
+      },
+      {
+        "name": "Rails Test Database",
+        "driver": "PostgreSQL",
+        "previewLimit": 50,
+        "server": "localhost",
+        "port": 5432,
+        // update this to match config/database.yml
+        "database": "app_test",
+        "username": "vscode"
+      }
+    ]
+  },
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "rebornix.ruby",
+    "wingrunr21.vscode-ruby",
+    "jnbt.vscode-rufo",
+    "ricardo-emerson.ruby-on-rails-development-extensions-pack",
+    "endverbraucher.pack-rails",
+    "hridoy.rails-snippets",
+    "aki77.rails-routes",
+    "Vense.rails-snippets",
+    "noku.rails-run-spec-vscode",
+    "shanehofstetter.rails-i18n",
+    "HookyQR.beautify",
+    "castwide.solargraph",
+    "misogi.ruby-rubocop",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
     "streetsidesoftware.code-spell-checker",
     "streetsidesoftware.code-spell-checker-portuguese",
     "oderwat.indent-rainbow",
     "rangav.vscode-thunder-client",
-		"mtxr.sqltools",
-		"mtxr.sqltools-driver-pg"
-	],
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [3000, 5432],
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "bundle install && rake db:setup",
-	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode"
+    "mtxr.sqltools",
+    "mtxr.sqltools-driver-pg"
+  ],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [3000, 5432],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "bundle install && rake db:setup",
+  // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "vscode"
 }
